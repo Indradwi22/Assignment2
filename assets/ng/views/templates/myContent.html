@@ -1,0 +1,30 @@
+
+
+    <md-toolbar layout="row" class="md-whiteframe-z1">
+      <md-button class="menu" hide-gt-sm  aria-label="Show User List">
+        <md-icon md-svg-icon="menu" ></md-icon>
+      </md-button>
+      <h1>Sensor</h1>
+    </md-toolbar>
+
+    <md-content flex id="content" layout="row" layout-margin layout-align="center">
+    
+        <div flex="30" flex-order="2" style="background:#009688" class="md-whiteframe-z3">
+   <md-list>
+        <md-list-item offset="33" layout-align="center" ng-repeat="itr in rightData">
+        {{itr.name}}<md-button ng-click="deleteData($index,'right')">X</md-button>	
+        </md-list-item>
+    	
+    </md-list>
+  </div>
+  <div flex="30" flex-order="1" style="background:#3949ab" class="md-whiteframe-z3">
+    <md-list >
+        <md-list-item offset="33" layout-align="center" ng-repeat="itl in leftData">
+        {{itl.name}}<md-button ng-click="deleteData($index,'left')">X</md-button>	
+        </md-list-item>
+    	
+    </md-list>
+  </div>
+      </md-content>
+
+ 

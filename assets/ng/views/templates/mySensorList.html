@@ -1,0 +1,32 @@
+
+
+    <md-toolbar class="md-whiteframe-z1">
+      <h1>Search</h1>
+    </md-toolbar>
+
+    	<md-input-container flex>
+            
+            <md-button ng-click="prosearch(true)" ng-show="!search">Search</md-button>
+            <div flex ng-show="search">
+                
+              <form ng-submit="findValue(enteredValue)">
+             <div style="float:left">
+                  <label>Search Name</label>
+              <input ng-model="enteredValue">
+                 </div>
+                  <span ng-click="prosearch(false)">Close</span>
+              </form>
+            </div>
+</md-input-container>
+    
+<div ng-show="!found">
+	{{message}}
+</div>
+    <md-list>
+        <md-list-item ng-repeat="it in results">
+        <md-button ng-click="move($index,'left')"><<</md-button>{{it.name}}<md-button ng-click="move($index,'right')">>></md-button>
+        	
+        </md-list-item>
+        
+    	
+    </md-list>
